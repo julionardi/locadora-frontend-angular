@@ -9,13 +9,18 @@ import {MatTableModule} from '@angular/material/table';
 import {MatCardModule} from '@angular/material/card';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
+import { IncluirNovoAtorComponent } from './incluir-novo-ator/incluir-novo-ator.component';
+
+import {MatIconModule} from '@angular/material/icon';
+
 
 
 
 @NgModule({
   declarations: [
     InicioComponent,
-    ListagemAtoresComponent
+    ListagemAtoresComponent,
+    IncluirNovoAtorComponent
   ],
   imports: [
     CommonModule,
@@ -23,7 +28,8 @@ import {MatButtonModule} from '@angular/material/button';
     MatTableModule,
     MatCardModule,
     MatToolbarModule,
-    MatButtonModule
+    MatButtonModule,
+    MatIconModule
   ]
 })
 export class ControleAcervoModule { }

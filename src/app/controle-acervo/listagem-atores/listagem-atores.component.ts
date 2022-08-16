@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 export interface Ator {
   id: string;
@@ -21,15 +22,39 @@ const ELEMENT_DATA: Ator[] = [
 export class ListagemAtoresComponent implements OnInit {
 
   atores = ELEMENT_DATA;
-  displayedColumns: string[] = ['id', 'nome'];
+  displayedColumns: string[] = ['id', 'nome', 'acoes'];
+  
 
-  constructor() { 
+  constructor(private router: Router) { 
 
-    //this.atores = [];
-
+    
   }
 
   ngOnInit(): void {
+  }
+
+  onIncluirNovoAtor(){
+
+      console.log("Realizado: onIncluirNovoAtor");
+
+      this.router.navigate(['controle-acervo/incluir-novo-ator']);
+
+  }
+
+  onAlterarAtor(){
+
+    console.log("Realizado: onAlterarAtor");
+
+    //this.router.navigate(['controle-acervo/incluir-novo-ator']);
+
+  }
+
+  onExcluirAtor(){
+
+    console.log("Realizado: onExcluirNovoAtor");
+
+    //this.router.navigate(['controle-acervo/incluir-novo-ator']);
+
   }
 
 }
