@@ -1,4 +1,4 @@
-<mat-card>
+  <mat-card>
 
     <mat-toolbar color="primary">
         <mat-toolbar-row>
@@ -25,7 +25,8 @@
     </ng-container>
 
      <!-- Ações Column -->
-    <ng-container matColumnDef="acoes">
+    <ng-container matColumnDef="acoes" >
+      
       <mat-header-cell *matHeaderCellDef>
         
       </mat-header-cell>
@@ -37,9 +38,11 @@
           <mat-icon>delete</mat-icon>
         </button>
       </mat-cell>
+
     </ng-container>
   
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
+  
 </mat-card>
