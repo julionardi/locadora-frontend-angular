@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { IncluirNovoAtorService } from '../services/incluir-novo-ator.service';
+
 
 @Component({
   selector: 'app-incluir-novo-ator',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IncluirNovoAtorComponent implements OnInit {
 
-  constructor() { }
+  servico : IncluirNovoAtorService;
+
+  constructor(auxServico: IncluirNovoAtorService) {
+
+    this.servico = auxServico;
+
+   }
 
   ngOnInit(): void {
+
   }
+
+  onIncluirNovoAtor(){
+
+    this.servico.incluirNovoAtor();
+
+  }
+
 
 }

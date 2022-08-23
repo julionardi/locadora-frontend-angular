@@ -12,6 +12,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { IncluirNovoAtorComponent } from './incluir-novo-ator/incluir-novo-ator.component';
 
 import {MatIconModule} from '@angular/material/icon';
+import { AlterarAtorComponent } from './alterar-ator/alterar-ator.component';
 
 
 
@@ -20,7 +21,8 @@ import {MatIconModule} from '@angular/material/icon';
   declarations: [
     InicioComponent,
     ListagemAtoresComponent,
-    IncluirNovoAtorComponent
+    IncluirNovoAtorComponent,
+    AlterarAtorComponent
   ],
   imports: [
     CommonModule,

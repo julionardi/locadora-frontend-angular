@@ -45,7 +45,7 @@ export class ListagemAtoresComponent implements OnInit {
 
     console.log("Realizado: onAlterarAtor");
 
-    //this.router.navigate(['controle-acervo/incluir-novo-ator']);
+    this.router.navigate(['controle-acervo/alterar-ator']);
 
   }
 

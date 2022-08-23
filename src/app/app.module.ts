@@ -9,6 +9,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { ToolBarComponent } from './tool-bar/tool-bar.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatMenuModule} from '@angular/material/menu';
+import { IncluirNovoAtorService } from './controle-acervo/services/incluir-novo-ator.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import {MatMenuModule} from '@angular/material/menu';
     MatIconModule,
     MatMenuModule
   ],
-  providers: [],
+  providers: [IncluirNovoAtorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
