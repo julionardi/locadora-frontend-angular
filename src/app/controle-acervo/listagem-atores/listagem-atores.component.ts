@@ -1,17 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { IncluirNovoAtorService } from '../services/incluir-novo-ator.service';
 
-export interface Ator {
-  id: string;
-  nome: string;
-}
+import { Ator } from '../model/ator';
 
-const ELEMENT_DATA: Ator[] = [
-  {id: '1', nome: 'João'},
-  {id: '2', nome: 'Maria'},
-  {id: '3', nome: 'José'},
-  {id: '4', nome: 'Pedro'},
-];
+//export interface Ator {
+//  id: string;
+//  nome: string;
+//}
+
+//const ELEMENT_DATA: Ator[] = [
+//  {id: 1, nome: 'João'},
+//  {id: 2, nome: 'Maria'},
+//  {id: 3, nome: 'José'},
+//  {id: 4, nome: 'Pedro'},
+//];
 
 @Component({
   selector: 'app-listagem-atores',
@@ -21,16 +24,26 @@ const ELEMENT_DATA: Ator[] = [
 
 export class ListagemAtoresComponent implements OnInit {
 
-  atores = ELEMENT_DATA;
-  displayedColumns: string[] = ['id', 'nome', 'acoes'];
+  //atores = ELEMENT_DATA;
+
+  atores : Ator[];
+
+  servico : IncluirNovoAtorService;
   
+  displayedColumns: string[] = ['id', 'nome', 'acoes'];
 
-  constructor(private router: Router) { 
+    
 
+  constructor(private router: Router, auxServico : IncluirNovoAtorService) { 
+    
+    this.servico = auxServico;
+
+    this.atores = this.servico.obterListaAtores();
     
   }
 
   ngOnInit(): void {
+
   }
 
   onIncluirNovoAtor(){
