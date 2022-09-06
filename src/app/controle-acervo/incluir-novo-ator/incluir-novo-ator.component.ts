@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { IncluirNovoAtorService } from '../services/incluir-novo-ator.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -11,9 +14,20 @@ export class IncluirNovoAtorComponent implements OnInit {
 
   servico : IncluirNovoAtorService;
 
-  constructor(auxServico: IncluirNovoAtorService) {
+  form : FormGroup;
+
+  constructor(auxServico: IncluirNovoAtorService, 
+    private formBuilder: FormBuilder,
+    private snackBar: MatSnackBar,
+    private router: Router) {
 
     this.servico = auxServico;
+
+    this.form = this.formBuilder.group({
+
+      nome:[null]
+
+    });
 
    }
 
@@ -21,11 +35,21 @@ export class IncluirNovoAtorComponent implements OnInit {
 
   }
 
-  onIncluirNovoAtor(){
+  onSubmit(){
 
-    this.servico.incluirNovoAtor();
+    //console.log("Incluir Novo Ator : onSubmit");
+    console.log(this.form.value);
+
+
+
+    this.servico.incluirNovoAtor(this.form.value).subscribe(result => {this.snackBar.open("Sucesso")}, error => {this.snackBar.open("ERRO!")});
 
   }
 
+  onListarAtores(){
+
+    this.router.navigate(['controle-acervo/listagem-atores']);
+
+  }
 
 }

@@ -13,6 +13,7 @@ import { IncluirNovoAtorComponent } from './incluir-novo-ator/incluir-novo-ator.
 
 import {MatIconModule} from '@angular/material/icon';
 import { AlterarAtorComponent } from './alterar-ator/alterar-ator.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -31,7 +32,8 @@ import { AlterarAtorComponent } from './alterar-ator/alterar-ator.component';
     MatCardModule,
     MatToolbarModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    ReactiveFormsModule
   ]
 })
 export class ControleAcervoModule { }

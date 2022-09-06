@@ -1,11 +1,14 @@
 
 <mat-card>
 <h2>Incluir Novo Ator</h2>
-<form class="col-md-6" >
+<form class="col-md-6" [formGroup]="form">
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Nome</label>
-      <input type="" class="form-control" id="nome" aria-describedby="">
+      <input type="" class="form-control" name="nome" id="nome" aria-describedby="" formControlName="nome">
     </div>
-    <button type="submit" (click)="onIncluirNovoAtor()" class="btn btn-primary">Submit</button>
+    <button type="submit" (click)="onSubmit()" class="btn btn-primary">Incluir</button>
+    <button type="button" (click)="onListarAtores()" class="btn btn-primary" >Lista de Atores</button>
 </form>
+
 </mat-card>
+

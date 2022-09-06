@@ -9,12 +9,12 @@ import { Ator } from '../model/ator';
 //  nome: string;
 //}
 
-//const ELEMENT_DATA: Ator[] = [
-//  {id: 1, nome: 'João'},
-//  {id: 2, nome: 'Maria'},
-//  {id: 3, nome: 'José'},
-//  {id: 4, nome: 'Pedro'},
-//];
+const ELEMENT_DATA: Ator[] = [
+  {id: 1, nome: 'João'},
+  {id: 2, nome: 'Maria'},
+  {id: 3, nome: 'José'},
+  {id: 4, nome: 'Pedro'},
+];
 
 @Component({
   selector: 'app-listagem-atores',
@@ -24,9 +24,9 @@ import { Ator } from '../model/ator';
 
 export class ListagemAtoresComponent implements OnInit {
 
-  //atores = ELEMENT_DATA;
+  atores = ELEMENT_DATA;
 
-  atores : Ator[];
+  //atores : Ator[];
 
   servico : IncluirNovoAtorService;
   
@@ -36,13 +36,25 @@ export class ListagemAtoresComponent implements OnInit {
 
   constructor(private router: Router, auxServico : IncluirNovoAtorService) { 
     
-    this.servico = auxServico;
-
-    this.atores = this.servico.obterListaAtores();
+    this.servico = auxServico; 
     
   }
 
   ngOnInit(): void {
+
+    this.onObterListaAtores();
+
+  }
+
+  onObterListaAtores(){
+
+      this.servico.obterListaAtores().subscribe(data => {
+
+        this.atores = data;
+        console.log(this.atores)
+
+      });
+
 
   }
 

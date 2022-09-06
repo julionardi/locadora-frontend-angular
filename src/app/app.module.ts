@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +11,7 @@ import { ToolBarComponent } from './tool-bar/tool-bar.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatMenuModule} from '@angular/material/menu';
 import { IncluirNovoAtorService } from './controle-acervo/services/incluir-novo-ator.service';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { IncluirNovoAtorService } from './controle-acervo/services/incluir-novo-
     BrowserAnimationsModule,
     MatToolbarModule,
     MatIconModule,
-    MatMenuModule
+    MatMenuModule,
+    HttpClientModule,
+    MatSnackBarModule
   ],
   providers: [IncluirNovoAtorService],
   bootstrap: [AppComponent]
