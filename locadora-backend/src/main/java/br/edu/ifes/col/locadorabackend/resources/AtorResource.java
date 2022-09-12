@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -57,8 +58,8 @@ public class AtorResource {
 		
 	}
 	
-	@DeleteMapping (value="/locadora/resouces/atores")
-	public ResponseEntity<Ator> excluirAtor(@RequestBody Long id){
+	@DeleteMapping (value="/locadora/resouces/atores/{id}")
+	public ResponseEntity<Ator> excluirAtor(@PathVariable Long id){
 		
 		
 		try {	

@@ -41,8 +41,11 @@ export class IncluirNovoAtorService {
 
   }
 
-  excluirAtor(){
+  excluirAtor(idCurso:number){
+    
+    console.log("Realizado: Excluir Ator - Service");
 
+    return this.httpClient.delete(this.API+'/'+idCurso).pipe(retry(3), catchError(this.handleError));
 
   }
 

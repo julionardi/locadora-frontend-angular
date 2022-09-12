@@ -1,13 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { IncluirNovoAtorService } from '../services/incluir-novo-ator.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 import { Ator } from '../model/ator';
-
-//export interface Ator {
-//  id: string;
-//  nome: string;
-//}
 
 const ELEMENT_DATA: Ator[] = [
   {id: 1, nome: 'João'},
@@ -32,11 +28,15 @@ export class ListagemAtoresComponent implements OnInit {
   
   displayedColumns: string[] = ['id', 'nome', 'acoes'];
 
+  
+  snackBar : MatSnackBar;
     
 
-  constructor(private router: Router, auxServico : IncluirNovoAtorService) { 
+  constructor(private router: Router, auxServico : IncluirNovoAtorService, private auxSnackBar: MatSnackBar,) { 
     
     this.servico = auxServico; 
+
+    this.snackBar = auxSnackBar;
     
   }
 
@@ -74,11 +74,15 @@ export class ListagemAtoresComponent implements OnInit {
 
   }
 
-  onExcluirAtor(){
+  onExcluirAtor(idCurso:number){
 
-    console.log("Realizado: onExcluirNovoAtor");
+    console.log("Realizado: onExcluirNovoAtor" + idCurso);
 
     //this.router.navigate(['controle-acervo/incluir-novo-ator']);
+
+    //this.servico.excluirAtor(idCurso).subscribe(result => {this.snackBar.open("Sucesso")}, error => {this.snackBar.open("ERRO!")});
+
+    this.servico.excluirAtor(idCurso).subscribe(result => {this.snackBar.open("SUCESSO!")}, error => {this.snackBar.open("ERRO!")});
 
   }
 
