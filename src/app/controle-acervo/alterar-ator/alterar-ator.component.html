@@ -1,12 +1,13 @@
 
 <mat-card>
     <h2>Alterar Ator</h2>
-    <form class="col-md-6">
+    <form class="col-md-6" [formGroup]="form">
         <div class="mb-3">
           <label for="" class="form-label">Nome</label>
-          <input type="" class="form-control" id="nome" aria-describedby="">
+          <input type="" class="form-control" id="nome" aria-describedby="" name="nome" formControlName="nome">
+          <input type="hidden" id="id" name="id" formControlName="id">
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" (click)="onAlterarAtor()" class="btn btn-primary">Submit</button>
     </form>
-    </mat-card>
+</mat-card>
     

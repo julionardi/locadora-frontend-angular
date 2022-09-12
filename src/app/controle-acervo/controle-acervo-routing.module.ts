@@ -10,7 +10,7 @@ const routes: Routes = [
   {path: '', component: InicioComponent },
   {path: 'listagem-atores', component: ListagemAtoresComponent},
   {path: 'incluir-novo-ator', component: IncluirNovoAtorComponent},
-  {path: 'alterar-ator', component: AlterarAtorComponent}
+  {path: 'alterar-ator/:id', component: AlterarAtorComponent}
  
 
 ];

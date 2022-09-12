@@ -49,13 +49,17 @@ export class IncluirNovoAtorService {
 
   }
 
-  alterarAtor(){
+  alterarAtor(ator : Ator):Observable<Ator>{
 
+    return this.httpClient.put<Ator>(this.API+'/'+ator.id, ator).pipe(retry(3), catchError(this.handleError));
 
   }
 
-  obterDadosAtor(){
+  obterDadosAtor(idCurso:number){
 
+    console.log("**************"+idCurso);
+
+    return this.httpClient.get<Ator>(this.API+'/'+idCurso).pipe(retry(3), catchError(this.handleError));
 
   }
 

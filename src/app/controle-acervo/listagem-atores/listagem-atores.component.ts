@@ -66,11 +66,12 @@ export class ListagemAtoresComponent implements OnInit {
 
   }
 
-  onAlterarAtor(){
+  onAlterarAtor(idCurso:number){
 
     console.log("Realizado: onAlterarAtor");
 
-    this.router.navigate(['controle-acervo/alterar-ator']);
+    this.router.navigate(['controle-acervo/alterar-ator', idCurso]);
+
 
   }
 
